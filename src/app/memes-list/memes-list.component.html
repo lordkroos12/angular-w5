@@ -1,0 +1,17 @@
+<div class="container">
+    @for (meme of paginatedMemes; track $index) {
+    <div class="box">
+        <div [routerLink]="['/meme', meme.id]">
+            <h3>{{ meme.name }}</h3>
+            <img [src]="meme.url" [alt]="meme.name" />
+        </div>
+            <button (click)="addFavorite(meme)">Add to Favorites</button>
+    </div>
+    }
+</div>
+
+<div class="pagination-controls">
+    <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+    <span>Page {{ currentPage }}</span>
+    <button (click)="nextPage()" [disabled]="currentPage * itemsPerPage >= memes.length">Next</button>
+</div>

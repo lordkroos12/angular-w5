@@ -1,0 +1,11 @@
+<h2>Favorite Memes</h2>
+<div class="container">
+    @for (meme of favorites; track $index) {
+    <div class="box" [routerLink]="['/meme', meme.id]">
+        <a >{{ meme.name }}</a>
+        <img [src]="meme.url" [alt]="meme.name" />
+        <button (click)="removeFavorite(meme)">Remove from Favorites</button>
+    </div>
+}
+</div>
+

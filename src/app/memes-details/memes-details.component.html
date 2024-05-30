@@ -1,0 +1,10 @@
+@if (meme) {
+<div>
+    <h2>{{ meme.name }}</h2>
+    <img [src]="meme.url" [alt]="meme.name" />
+    <div class="buttons">
+        <button (click)="addFavorite(meme)">Add to Favorites</button>
+        <button (click)="downloadImage(meme.url)">Download</button>
+    </div>
+</div>
+}
